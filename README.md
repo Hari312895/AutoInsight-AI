@@ -1,384 +1,310 @@
-AutoInsight AI
+# AutoInsight AI
+
+
 
 Car Sales Analytics \& Machine Learning Price Prediction
 
 
 
-AutoInsight AI is an end-to-end analytics and machine learning application that transforms historical car sales data into interactive business insights and vehicle price predictions.
+AutoInsight AI is an end-to-end data analytics and machine learning application that analyzes historical car sales data and predicts vehicle prices through an interactive web dashboard.
 
 
 
-The project combines a React + TypeScript analytics dashboard, a FastAPI REST API, and a Random Forest Regression pipeline developed using Python and Scikit-learn.
+The project combines Python-based machine learning, a FastAPI prediction service, and a React + TypeScript dashboard into a complete data-to-prediction workflow.
 
 
 
-Overview
+## Overview
 
 
 
-The system analyzes 23,906 historical car sales records to identify patterns across:
+The application analyzes 23,906 car sales records to understand sales performance, vehicle characteristics, customer patterns, dealer performance, regional trends, and pricing behavior.
 
 
 
-Sales performance
+A trained Random Forest Regression model is integrated with the dashboard through a REST API, allowing users to enter vehicle details and receive a predicted price.
 
-Vehicle pricing
 
-Customer demographics
 
-Dealer performance
+### Workflow
 
-Regional distribution
 
-Vehicle characteristics
 
+Historical Car Sales Data
 
+↓
 
-The trained machine learning model is exposed through a REST API and consumed directly by the web application, creating a complete data-to-prediction pipeline.
+Data Cleaning \& Preparation
 
+↓
 
+Exploratory Data Analysis
 
-System Architecture
+↓
 
-&#x20;                   Historical Car Sales Data
+Feature Preparation
 
-&#x20;                             │
+↓
 
-&#x20;                             ▼
+Random Forest Regression
 
-&#x20;                   Data Cleaning \& EDA
+↓
 
-&#x20;                             │
+Trained ML Pipeline
 
-&#x20;                             ▼
+↓
 
-&#x20;                Feature Engineering \& Encoding
+FastAPI REST API
 
-&#x20;                             │
+↓
 
-&#x20;                             ▼
+React + TypeScript Dashboard
 
-&#x20;                Random Forest Regression
+↓
 
-&#x20;                             │
+Interactive Analytics \& Price Prediction
 
-&#x20;                             ▼
 
-&#x20;                    Trained ML Pipeline
 
-&#x20;                             │
+## Key Features
 
-&#x20;                             ▼
 
-&#x20;                      FastAPI REST API
 
-&#x20;                             │
+#### Sales Analytics
 
-&#x20;                             ▼
 
-&#x20;                React + TypeScript Dashboard
 
-&#x20;                             │
+Sales performance by company
 
-&#x20;                ┌────────────┴────────────┐
+Revenue analysis
 
-&#x20;                ▼                         ▼
+Yearly and monthly sales trends
 
-&#x20;         Business Analytics        Price Prediction
+Regional sales distribution
 
-Technology Stack
+Dealer performance analysis
 
-Layer	Technologies
 
-Frontend	React, TypeScript, Vite
 
-UI	Tailwind CSS, Lucide React
+#### Vehicle Analytics
 
-Visualization	Recharts
 
-Backend	Python, FastAPI, Uvicorn
 
-Machine Learning	Scikit-learn, Random Forest
+Model-level analysis
 
-Data Processing	Pandas, NumPy
+Body style distribution
 
-Visualization / EDA	Matplotlib, Seaborn
+Transmission analysis
 
-Model Serialization	Joblib
+Color analysis
 
-Development	Jupyter Notebook, Git, GitHub
+Vehicle price patterns
 
-Machine Learning Pipeline
 
-Target
 
+#### Customer Analytics
 
 
-Car Price (Price ($))
 
+Customer gender analysis
 
+Annual income analysis
 
-Features
+Income vs. vehicle price relationship
 
-Annual Income
 
-Company
 
-Model
+#### Dealer \& Region
+
+
+
+Dealer sales performance
+
+Regional sales comparison
+
+Regional revenue analysis
+
+
+
+#### Price Prediction
+
+
+
+Vehicle price prediction using Random Forest Regression
+
+Real-time prediction through FastAPI
+
+React frontend connected directly to the prediction API
+
+
+
+#### Model Insights
+
+
+
+Machine learning model information
+
+Feature importance analysis
+
+Model evaluation metrics
+
+Prediction workflow
+
+
+
+#### Dashboard
+
+
+
+The AutoInsight AI dashboard contains the following modules:
+
+
+
+Overview — Overall business and dataset summary
+
+
+
+Sales Analytics — Sales and revenue trends
+
+
+
+Vehicle Analytics — Vehicle and pricing analysis
+
+
+
+Customer Analytics — Customer and income insights
+
+
+
+Dealer \& Region — Dealer and regional performance
+
+
+
+Price Prediction — Machine learning price prediction
+
+
+
+Model Insights — ML model information and feature analysis
+
+
+
+About Project — Project and technology information
+
+
+
+## Technology Stack
+
+
+
+### Frontend
+
+
+
+React
+
+TypeScript
+
+Vite
+
+Tailwind CSS
+
+Recharts
+
+Lucide React
+
+
+
+#### Backend
+
+
+
+Python
+
+FastAPI
+
+Uvicorn
+
+Pandas
+
+Joblib
+
+
+
+#### Machine Learning
+
+
+
+Scikit-learn
+
+Random Forest Regression
+
+One-Hot Encoding
+
+ColumnTransformer
+
+Permutation Feature Importance
+
+
+
+#### Data Analysis
+
+
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+Jupyter Notebook
+
+
+
+#### Development Tools
+
+
+
+Git
+
+GitHub
+
+VS Code
+
+Jupyter Notebook
+
+
+
+### Dataset
+
+
+
+The project uses a historical car sales dataset containing:
+
+
+
+23,906 records and 16 original attributes
+
+
+
+The dataset includes information such as:
+
+
+
+Customer information
+
+Annual income
+
+Vehicle company
+
+Vehicle model
 
 Engine
 
 Transmission
 
 Color
-
-Body Style
-
-Dealer Region
-
-Preprocessing
-
-
-
-Categorical variables are processed using:
-
-
-
-One-Hot Encoding
-
-&#x20;       +
-
-ColumnTransformer
-
-&#x20;       +
-
-Random Forest Regression
-
-
-
-The complete preprocessing and prediction pipeline is serialized using Joblib and served through FastAPI.
-
-
-
-Dashboard
-
-
-
-The application provides dedicated analytics views for:
-
-
-
-Overview
-
-
-
-Dataset KPIs
-
-Sales summary
-
-Revenue overview
-
-
-
-Sales Analytics
-
-
-
-Company performance
-
-Revenue distribution
-
-Time-based sales trends
-
-
-
-Vehicle Analytics
-
-
-
-Models
-
-Body styles
-
-Transmission
-
-Colors
-
-Pricing patterns
-
-
-
-Customer Analytics
-
-
-
-Gender distribution
-
-Income analysis
-
-Income vs. vehicle price
-
-
-
-Dealer \& Region
-
-
-
-Dealer performance
-
-Regional sales
-
-Regional revenue
-
-
-
-Price Prediction
-
-
-
-Vehicle input form
-
-Real-time API prediction
-
-Model-generated estimated price
-
-
-
-Model Insights
-
-
-
-Model evaluation
-
-Feature importance
-
-Machine learning information
-
-API
-
-
-
-The prediction service is implemented using FastAPI.
-
-
-
-Health Check
-
-GET /
-
-
-
-Response:
-
-
-
-{
-
-&#x20; "message": "Car Price Prediction API is running"
-
-}
-
-Price Prediction
-
-POST /predict
-
-
-
-Example request:
-
-
-
-{
-
-&#x20; "Annual Income": 800000,
-
-&#x20; "Company": "Toyota",
-
-&#x20; "Model": "Camry",
-
-&#x20; "Engine": "Double Overhead Camshaft",
-
-&#x20; "Transmission": "Automatic",
-
-&#x20; "Color": "Black",
-
-&#x20; "Body Style": "Sedan",
-
-&#x20; "Dealer\_Region": "Austin"
-
-}
-
-
-
-The API returns the price predicted by the trained Random Forest pipeline.
-
-
-
-Project Structure
-
-AutoInsight-AI/
-
-│
-
-├── src/
-
-│   ├── components/
-
-│   ├── pages/
-
-│   ├── services/
-
-│   ├── data/
-
-│   └── types/
-
-│
-
-├── index.html
-
-├── package.json
-
-├── package-lock.json
-
-├── vite.config.ts
-
-├── tsconfig.json
-
-└── README.md
-
-
-
-Backend:
-
-
-
-car-sales-api/
-
-│
-
-├── app.py
-
-├── car\_price\_model.pkl
-
-└── requirements.txt
-
-Dataset
-
-
-
-The dataset contains 23,906 car sales records with information covering:
-
-
-
-Customer details
-
-Annual income
-
-Vehicle company and model
-
-Engine and transmission
-
-Vehicle color
 
 Vehicle price
 
@@ -392,43 +318,183 @@ Sales date
 
 
 
-Data preparation included missing-value handling, duplicate checks, datatype conversion, exploratory analysis, and categorical preprocessing.
+### Data Preparation
 
 
 
-Key Data Science Work
+The analysis includes:
 
 
 
-The notebook covers:
+Missing-value handling
+
+Duplicate detection
+
+Datatype conversion
+
+Exploratory data analysis
+
+Statistical analysis
+
+Data visualization
+
+Feature preparation
+
+Train/test splitting
+
+Categorical encoding
 
 
 
-Data Cleaning
+API
 
-Exploratory Data Analysis
 
-Statistical Analysis
 
-Data Visualization
+The machine learning model is served using FastAPI.
 
-Feature Preparation
 
-Train/Test Split
 
-One-Hot Encoding
+Health Check
 
-Random Forest Regression
 
-MAE / RMSE / R² evaluation
 
-Permutation Feature Importance
+GET /
 
-Model Prediction
+
+
+Response:
+
+
+
+{
+
+"message": "Car Price Prediction API is running"
+
+}
+
+
+
+Price Prediction
+
+
+
+POST /predict
+
+
+
+Example request:
+
+
+
+{
+
+"Annual Income": 800000,
+
+"Company": "Toyota",
+
+"Model": "Camry",
+
+"Engine": "Double Overhead Camshaft",
+
+"Transmission": "Automatic",
+
+"Color": "Black",
+
+"Body Style": "Sedan",
+
+"Dealer\_Region": "Austin"
+
+}
+
+
+
+Example response:
+
+
+
+{
+
+"predicted\_price": 28500.00
+
+}
+
+
+
+The prediction value above is only an example of the API response format.
+
+
+
+### Project Structure
+
+
+
+#### Frontend
+
+
+
+AutoInsight-AI/
+
+
+
+src/
+
+components/
+
+pages/
+
+services/
+
+data/
+
+types/
+
+
+
+public/
+
+index.html
+
+package.json
+
+package-lock.json
+
+vite.config.ts
+
+tsconfig.json
+
+README.md
+
+
+
+#### Backend
+
+
+
+car-sales-api/
+
+
+
+app.py
+
+requirements.txt
+
+.gitignore
+
+car\_price\_model.pkl
+
+
+
+The trained model file is kept outside the frontend repository because of its file size.
+
+
 
 Running the Project
 
-Frontend
+
+
+Clone the Repository
+
+
 
 git clone https://github.com/Hari312895/AutoInsight-AI.git
 
@@ -438,7 +504,15 @@ cd AutoInsight-AI
 
 
 
+Install Frontend Dependencies
+
+
+
 npm install
+
+
+
+Start the Frontend
 
 
 
@@ -446,15 +520,27 @@ npm run dev
 
 
 
-Frontend:
+The dashboard will run at:
 
 
 
 http://localhost:3000
 
-Backend
+
+
+Start the Backend
+
+
+
+Navigate to the backend project:
+
+
 
 cd car-sales-api
+
+
+
+Install the required Python packages:
 
 
 
@@ -462,11 +548,15 @@ pip install fastapi uvicorn pandas scikit-learn joblib
 
 
 
+Start the API:
+
+
+
 uvicorn app:app --reload
 
 
 
-API:
+The API will run at:
 
 
 
@@ -474,29 +564,99 @@ http://127.0.0.1:8000
 
 
 
-Both services must be running for live price prediction.
+Both the frontend and backend should be running for live price prediction.
 
 
 
-Future Development
+## Machine Learning Workflow
 
 
 
-Planned extensions include:
+Dataset
+
+↓
+
+Data Cleaning
+
+↓
+
+EDA
+
+↓
+
+Feature Selection
+
+↓
+
+Train / Test Split
+
+↓
+
+One-Hot Encoding
+
+↓
+
+Random Forest Regression
+
+↓
+
+Model Evaluation
+
+↓
+
+Model Serialization
+
+↓
+
+FastAPI API
+
+↓
+
+React Price Prediction
 
 
 
-Model comparison and hyperparameter optimization
+### Project Highlights
 
-Additional vehicle features
 
-Improved feature engineering
+
+End-to-end machine learning project
+
+Interactive analytics dashboard
+
+Real-time API-based prediction
+
+Data preprocessing and exploratory analysis
+
+Random Forest regression
+
+Feature importance analysis
+
+React frontend integration
+
+FastAPI backend integration
+
+GitHub-based project workflow
+
+
+
+### Future Improvements
+
+
+
+Hyperparameter optimization
+
+Comparison with additional regression algorithms
+
+Advanced feature engineering
+
+Model monitoring
 
 Cloud deployment
 
 Production API deployment
 
-Interactive business intelligence dashboards
+Automated model retraining
 
-Real-time deployed prediction service
+Expanded vehicle and market features
 
