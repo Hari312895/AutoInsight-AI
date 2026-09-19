@@ -1,0 +1,6 @@
+{
+  "name": "AutoInsight AI",
+  "description": "Car Sales Analytics & Predictive Intelligence dashboard exploring 23,906 sales records, regional performance, customer demographics, and machine learning price prediction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
